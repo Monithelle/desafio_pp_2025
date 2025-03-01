@@ -9,8 +9,10 @@ $filtros = [
     'descricao' => isset($_GET['descricao']) ? $_GET['descricao'] : "",
     'endereco' => isset($_GET['endereco']) ? $_GET['endereco'] : "",
     'link_endereco' => isset($_GET['link_endereco']) ? $_GET['link_endereco'] : "",
-    'datahora_inicio' => isset($_GET['datahora_inicio']) ? $_GET['datahora_inicio'] : "",
-    'preco' => isset($_GET['preco']) ? $_GET['preco'] : "",
+    'data_inicio' => isset($_GET['data_inicio']) ? $_GET['data_inicio'] : "",
+    'data_fim' => isset($_GET['data_fim']) ? $_GET['data_fim'] : "",
+    'preco_min' => isset($_GET['preco_min']) ? $_GET['preco_min'] : "",
+    'preco_max' => isset($_GET['preco_max']) ? $_GET['preco_max'] : "",
 ];
 
 $registros = $controller->listar($filtros);
@@ -181,9 +183,18 @@ div[style*="background-color: lightcoral"] {
         <label for="tipo">Link:</label>
         <input type="url" name="link_endereco" placeholder="Link" value="<?php echo htmlspecialchars($filtros['link_endereco']); ?>">
 
-        <label for="tipo">Data e Hora:</label>
-        <input type="datetime-local" name="datahora_inicio" placeholder=" " value="<?php echo htmlspecialchars($filtros['datahora_inicio']); ?>">
-        <input type="number" name="preco" placeholder="Preço" value="<?php echo htmlspecialchars($filtros['preco']); ?>">
+        <label for="tipo">Data e Hora de:</label>
+        <input type="datetime-local" name="data_inicio" placeholder=" " value="<?php echo htmlspecialchars($filtros['data_inicio']); ?>">
+
+        <label for="tipo">Data e Hora até:</label>
+        <input type="datetime-local" name="data_fim" placeholder=" " value="<?php echo htmlspecialchars($filtros['data_fim']); ?>">
+
+        <label for="tipo">Preço de:</label>
+        <input type="text" name="preco_min" placeholder=" " value="<?php echo htmlspecialchars($filtros['preco_min']); ?>">
+
+        <label for="tipo">Preço até:</label>
+        <input type="text" name="preco_max" placeholder=" " value="<?php echo htmlspecialchars($filtros['preco_max']); ?>">
+
         <button type="submit">Pesquisar</button>
     </form>
 

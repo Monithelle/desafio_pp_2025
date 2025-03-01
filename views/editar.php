@@ -39,7 +39,6 @@ $datahora_inicio = date('Y-m-d\TH:i', strtotime($registro['datahora_inicio']));
     box-sizing: border-box;
 }
 
-/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -48,14 +47,12 @@ body {
     margin: 20px;
 }
 
-/* Estilo do título */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Estilo do formulário */
 form {
     background-color: #fff;
     padding: 20px;
@@ -100,12 +97,10 @@ form button:hover {
     background-color: #45a049;
 }
 
-/* Estilo do campo de texto (textarea) */
 form textarea {
     resize: vertical;
 }
 
-/* Estilo das mensagens de feedback */
 div {
     margin-top: 20px;
     padding: 10px;
