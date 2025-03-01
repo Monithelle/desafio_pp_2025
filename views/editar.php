@@ -32,7 +32,7 @@ $datahora_inicio = date('Y-m-d\TH:i', strtotime($registro['datahora_inicio']));
     <meta charset="UTF-8">
     <title>Editar Registro</title>
     <style>
-        /* Reset de margens e padding para garantir que o layout fique consistente */
+    
 * {
     margin: 0;
     padding: 0;
