@@ -16,35 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cadastros`
+-- Table structure for table `eventos`
 --
 
-DROP TABLE IF EXISTS `cadastros`;
+DROP TABLE IF EXISTS `eventos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cadastros` (
+CREATE TABLE `eventos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` enum('social','cultural','esportivo','corporativo','religioso','entretenimento','outros') NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `telefone` varchar(255) NOT NULL,
-  `cidade` varchar(255) NOT NULL,
+  `descricao` text DEFAULT NULL,
+  `endereco` text NOT NULL,
+  `link_endereco` varchar(255) DEFAULT NULL,
+  `datahora_inicio` datetime NOT NULL,
+  `preco` decimal(10,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT '1970-01-01 03:00:01',
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cadastros`
+-- Dumping data for table `eventos`
 --
 
-LOCK TABLES `cadastros` WRITE;
-/*!40000 ALTER TABLE `cadastros` DISABLE KEYS */;
-INSERT INTO `cadastros` VALUES (2,'moni','lok@sajd','1209310','askdmj'),(4,'pablo','las@dksao','0239','doas'),(5,'moni','moni@sokd','0129','marilai'),(6,'maria','sdoak@dkoas','29183','skdas');
-/*!40000 ALTER TABLE `cadastros` ENABLE KEYS */;
+LOCK TABLES `eventos` WRITE;
+/*!40000 ALTER TABLE `eventos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eventos` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'projetos'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-28 23:54:00
+-- Dump completed on 2025-03-01 15:14:23
